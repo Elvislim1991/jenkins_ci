@@ -15,5 +15,9 @@ def hello_user(username):
 def new_feature():
     return 'new feature!\n'
 
+@app.route('/new_page/')
+def new_page():
+    return 'new page!\n'
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0') # open for everyone

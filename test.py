@@ -29,6 +29,11 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'new feature!\n')
 
+    def test_new_page(self):
+        rv = self.app.get('/new_page/')
+        self.assertEqual(rv.status, '200 OK')
+        self.assertEqual(rv.data, b'new page!\n')
+
 if __name__ == '__main__':
     import xmlrunner
     runner = xmlrunner.XMLTestRunner(output='test-reports')
