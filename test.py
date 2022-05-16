@@ -18,12 +18,6 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         self.assertEqual(rv.data, b'Hello World!\n')
 
-    def test_hello_name(self):
-        name = 'Elvis'
-        rv = self.app.get(f'/hello/{name}')
-        self.assertEqual(rv.status, '200 OK')
-        self.assertIn(bytearray(f"{name}", 'utf-8'), rv.data)
-
     def test_hello_name_full_data(self):
         name = 'Elvis'
         rv = self.app.get(f'/hello/{name}')
