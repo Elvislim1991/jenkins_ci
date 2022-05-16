@@ -24,6 +24,12 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         self.assertIn(bytearray(f"{name}", 'utf-8'), rv.data)
 
+    def test_hello_name_full_data(self):
+        name = 'Elvis'
+        rv = self.app.get(f'/hello/{name}')
+        self.assertEqual(rv.status, '200 OK')
+        self.assertEqual(rv.data, bytes(f'Why Hello {name}!\n', 'utf-8'))
+
     def test_new_feature(self):
         rv = self.app.get('/new_feature/')
         self.assertEqual(rv.status, '200 OK')
