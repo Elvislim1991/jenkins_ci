@@ -1,2 +1,0 @@
-# Ignore test-reports
-test-reports
